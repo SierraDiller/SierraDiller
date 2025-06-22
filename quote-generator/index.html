@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✨ Daily Inspiration</h1>
+            <p>Discover wisdom in every quote</p>
+        </header>
+        
+        <main>
+            <div class="quote-card" id="quoteCard">
+                <div class="quote-content">
+                    <blockquote id="quoteText">
+                        Click the button below to get your first quote!
+                    </blockquote>
+                    <cite id="quoteAuthor">- Quote Generator</cite>
+                </div>
+                
+                <div class="quote-actions">
+                    <button class="btn btn-primary" id="newQuoteBtn">
+                        <span class="btn-text">Get New Quote</span>
+                        <span class="btn-loading" style="display: none;">Loading...</span>
+                    </button>
+                    
+                    <div class="action-buttons">
+                        <button class="btn btn-secondary" id="copyBtn" title="Copy to clipboard">
+                            📋 Copy
+                        </button>
+                        <button class="btn btn-secondary" id="shareBtn" title="Share on Twitter">
+                            🐦 Share
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Powered by <a href="https://quotable.io" target="_blank">quotable.io</a></p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html> 

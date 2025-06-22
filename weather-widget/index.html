@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Widget</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="location-section">
+                <h1 class="location-name" id="locationName">Loading location...</h1>
+                <p class="location-details" id="locationDetails">Detecting your location</p>
+            </div>
+            
+            <div class="search-section">
+                <div class="search-container">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search for a city...">
+                    <button id="searchBtn" class="search-btn">🔍</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Weather Card -->
+        <main class="weather-main">
+            <div class="weather-card" id="weatherCard">
+                <!-- Loading State -->
+                <div class="loading-state" id="loadingState">
+                    <div class="loading-spinner"></div>
+                    <p>Loading weather data...</p>
+                </div>
+
+                <!-- Weather Content -->
+                <div class="weather-content" id="weatherContent" style="display: none;">
+                    <div class="current-weather">
+                        <div class="weather-icon-container">
+                            <div class="weather-icon" id="weatherIcon">☀️</div>
+                        </div>
+                        
+                        <div class="temperature-section">
+                            <div class="temperature">
+                                <span class="temp-value" id="tempValue">--</span>
+                                <span class="temp-unit" id="tempUnit">°F</span>
+                            </div>
+                            <div class="feels-like">
+                                Feels like <span id="feelsLike">--</span><span id="feelsLikeUnit">°F</span>
+                            </div>
+                        </div>
+                        
+                        <div class="weather-description" id="weatherDescription">
+                            Clear sky
+                        </div>
+                    </div>
+
+                    <div class="weather-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Humidity</span>
+                            <span class="detail-value" id="humidity">--%</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Wind Speed</span>
+                            <span class="detail-value" id="windSpeed">-- mph</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Pressure</span>
+                            <span class="detail-value" id="pressure">-- hPa</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Visibility</span>
+                            <span class="detail-value" id="visibility">-- km</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Error State -->
+                <div class="error-state" id="errorState" style="display: none;">
+                    <div class="error-icon">⚠️</div>
+                    <h3>Unable to load weather</h3>
+                    <p id="errorMessage">Please check your connection and try again.</p>
+                    <button id="retryBtn" class="retry-btn">Try Again</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Controls Section -->
+        <section class="controls">
+            <div class="control-buttons">
+                <button id="refreshBtn" class="control-btn" title="Refresh weather">
+                    🔄 Refresh
+                </button>
+                <button id="unitToggleBtn" class="control-btn" title="Toggle temperature units">
+                    °F / °C
+                </button>
+                <button id="locationBtn" class="control-btn" title="Use my location">
+                    📍 My Location
+                </button>
+            </div>
+        </section>
+
+        <!-- Forecast Preview -->
+        <section class="forecast-section">
+            <h2>5-Day Forecast</h2>
+            <div class="forecast-container" id="forecastContainer">
+                <div class="forecast-loading">Loading forecast...</div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Powered by <a href="https://openweathermap.org" target="_blank">OpenWeatherMap</a></p>
+            <p class="last-updated">Last updated: <span id="lastUpdated">--</span></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
